@@ -23,7 +23,7 @@ public class PositionType {
 
     @Override
     public String toString() {
-        return "Value: " + value;
+        return value;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
@@ -32,13 +32,16 @@ public class PositionType {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+        // AUTO GENERATED EQUALS() START
+        // if (this == o) return true;
+        // if (o == null || getClass() != o.getClass()) return false;
 
         PositionType that = (PositionType) o;
 
         if (id != that.id) return false;
         return Objects.equals(value, that.value);
+        // AUTO GENERATED EQUALS() END
     }
 
     @Override

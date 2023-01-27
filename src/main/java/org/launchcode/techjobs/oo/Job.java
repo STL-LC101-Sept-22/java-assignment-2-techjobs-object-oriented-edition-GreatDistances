@@ -25,6 +25,7 @@ public class Job {
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -38,6 +39,8 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
+
+        // AUTO GENERATED BELOW
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -49,6 +52,7 @@ public class Job {
         if (!Objects.equals(location, job.location)) return false;
         if (!Objects.equals(positionType, job.positionType)) return false;
         return Objects.equals(coreCompetency, job.coreCompetency);
+        // AUTO GENERATED ABOVE
     }
 
     @Override
@@ -62,10 +66,14 @@ public class Job {
         return result;
     }
 
-
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     // MW done 23/01/27, 12:22p
+
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
