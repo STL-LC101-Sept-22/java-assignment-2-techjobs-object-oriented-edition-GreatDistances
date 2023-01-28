@@ -38,7 +38,49 @@ public class JobTest {
     @Test
     public void testJobsForEquality() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertNotEquals(job1, job2);
+        Job job1a = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertNotEquals(job1, job1a);
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expected = "\n";
+
+        String tester1 = job1.toString();
+
+        String start = tester1.substring(0,1);
+        assertEquals(expected, start);
+
+        String end = tester1.substring(tester1.length()-1, tester1.length());
+        assertEquals(expected, end);
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String tester1 = job1.toString();
+        String expected1 = "\nID: 1\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n";
+        assertEquals(tester1, expected1);
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job jobWithEmptyField = new Job("", new Employer(null), new Location(""), new PositionType(null), new CoreCompetency(""));
+        String tester2 = jobWithEmptyField.toString();
+        String errorMessage = "Data not available";
+        String expected2 = "\nID: 1\n" +
+                "Name: " + errorMessage + "\n" +
+                "Employer: " + errorMessage + "\n" +
+                "Location: " + errorMessage + "\n" + // account for empty field with " Data not available"
+                "Position Type: " + errorMessage + "\n" +
+                "Core Competency: " + errorMessage + "\n";
+                assertEquals(tester2, expected2);
+
     }
 }

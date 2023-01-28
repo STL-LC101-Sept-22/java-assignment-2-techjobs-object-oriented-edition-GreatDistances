@@ -112,4 +112,49 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+        String errorMessage = "Data not available";
+        String printName;
+        String printId;
+        String printLocation;
+        String printEmployer;
+        String printPositionType;
+        String printCoreCompetency;
+
+        if (getName() == null || getName() == "") {
+            printName = errorMessage;
+        } else {
+            printName = getName();
+        }
+        if (getLocation().getValue() == null || getLocation().getValue() == "") {
+            printLocation = errorMessage;
+        } else {
+            printLocation = getLocation().getValue();
+        }
+        if (getEmployer().getValue() == null || getEmployer().getValue() == "") {
+            printEmployer = errorMessage;
+        } else {
+            printEmployer = getEmployer().getValue();
+        }
+        if (getPositionType().getValue() == null || getPositionType().getValue() == "") {
+            printPositionType = errorMessage;
+        } else {
+            printPositionType = getPositionType().getValue();
+        }
+        if (getCoreCompetency().getValue() == null || getCoreCompetency().getValue() == "") {
+            printCoreCompetency = errorMessage;
+        } else {
+            printCoreCompetency = getCoreCompetency().getValue();
+        }
+
+        String output = "\nID: " + getId() + "\n" +
+                "Name: " + printName + "\n" +
+                "Employer: " + printEmployer + "\n" +
+                "Location: " + printLocation + "\n" +
+                "Position Type: " + printPositionType + "\n" +
+                "Core Competency: " + printCoreCompetency + "\n";
+        return output;
+    }
 }
