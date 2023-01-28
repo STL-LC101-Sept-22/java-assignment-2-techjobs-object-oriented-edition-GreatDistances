@@ -45,14 +45,14 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String expected = "\n";
+        char expected = '\n';
 
         String tester1 = job1.toString();
 
-        String start = tester1.substring(0,1);
+        char start = tester1.charAt(0);
         assertEquals(expected, start);
 
-        String end = tester1.substring(tester1.length()-1, tester1.length());
+        char end = tester1.charAt(tester1.length()-1);
         assertEquals(expected, end);
     }
 
