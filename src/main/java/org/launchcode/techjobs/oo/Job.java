@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class Job {
 
     private int id;
@@ -39,20 +37,19 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
-
-        // AUTO GENERATED BELOW
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Job job = (Job) o;
 
-        if (id != job.id) return false;
-        if (!Objects.equals(name, job.name)) return false;
-        if (!Objects.equals(employer, job.employer)) return false;
-        if (!Objects.equals(location, job.location)) return false;
-        if (!Objects.equals(positionType, job.positionType)) return false;
-        return Objects.equals(coreCompetency, job.coreCompetency);
-        // AUTO GENERATED ABOVE
+        if (id == job.id) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -65,6 +62,7 @@ public class Job {
         result = 31 * result + (coreCompetency != null ? coreCompetency.hashCode() : 0);
         return result;
     }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
