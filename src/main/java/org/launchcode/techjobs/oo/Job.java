@@ -37,9 +37,11 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
+        // if memory addresses are the same, objects are equal, return true.
+        if (o == this) {
             return true;
         }
+        // if test object is null, or if object's class is not the same as parameterized object's class, objects are not equal, return false.
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
@@ -63,11 +65,9 @@ public class Job {
         return result;
     }
 
-
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     // MW done 23/01/27, 12:22p
-
 
     public int getId() {
         return id;
