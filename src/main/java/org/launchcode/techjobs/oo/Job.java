@@ -37,32 +37,17 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
-        // if memory addresses are the same, objects are equal, return true.
-        if (o == this) {
-            return true;
-        }
-        // if test object is null, or if object's class is not the same as parameterized object's class, objects are not equal, return false.
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Job job = (Job) o;
 
-        if (id == job.id) {
-            return true;
-        }
-        return false;
+        return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (employer != null ? employer.hashCode() : 0);
-        result = 31 * result + (location != null ? location.hashCode() : 0);
-        result = 31 * result + (positionType != null ? positionType.hashCode() : 0);
-        result = 31 * result + (coreCompetency != null ? coreCompetency.hashCode() : 0);
-        return result;
+        return id;
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
@@ -117,7 +102,6 @@ public class Job {
     public String toString() {
         String errorMessage = "Data not available";
         String printName;
-        String printId;
         String printLocation;
         String printEmployer;
         String printPositionType;

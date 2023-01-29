@@ -60,7 +60,7 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String tester1 = job1.toString();
-        String expected1 = "\nID: 1\n" +
+        String expected1 = "\nID: " + job1.getId() + "\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
@@ -74,7 +74,7 @@ public class JobTest {
         Job jobWithEmptyField = new Job("", new Employer(null), new Location(""), new PositionType(null), new CoreCompetency(""));
         String tester2 = jobWithEmptyField.toString();
         String errorMessage = "Data not available";
-        String expected2 = "\nID: 1\n" +
+        String expected2 = "\nID: " + jobWithEmptyField.getId() + "\n" +
                 "Name: " + errorMessage + "\n" +
                 "Employer: " + errorMessage + "\n" +
                 "Location: " + errorMessage + "\n" + // account for empty field with " Data not available"
