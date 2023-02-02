@@ -33,8 +33,28 @@ public abstract class JobField {
     public void setValue(String value) {
         this.value = value;
     }
+
     // TODO 6. Add in the custom methods.
     // MW unclear what custom methods ?
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JobField jobField = (JobField) o;
+
+        return id == jobField.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 
     // TODO 7. Finally, to prevent the creation of a JobField object, make this class abstract.
     // MW done
