@@ -82,6 +82,5 @@ public class JobTest {
                 "Position Type: " + errorMessage + "\n" +
                 "Core Competency: " + errorMessage + "\n";
                 assertEquals(tester2, expected2);
-
     }
 }
