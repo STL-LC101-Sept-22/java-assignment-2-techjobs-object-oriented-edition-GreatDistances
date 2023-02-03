@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class Location extends JobField {
 
 
@@ -40,7 +38,7 @@ public class Location extends JobField {
     }
     */
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Location)) return false;
@@ -51,7 +49,7 @@ public class Location extends JobField {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
-    }
+    }*/
 
     // Getters and Setters:
 
